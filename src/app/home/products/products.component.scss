@@ -59,155 +59,10 @@
   margin: 0 10px;
 }
 
-.tooltip {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 150px;
-  background-color: rgb(20, 55, 109);
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-  font-family: "Montserrat", sans-serif;
-
-  /* Position the tooltip */
-  position: absolute;
-  z-index: 1;
-  top: 100%;
-  left: 50%;
-  margin-left: -60px;
-  margin-top: 10px;
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-}
-
-.card-container {
-  margin-left: 7%;
-}
-
-.example-card {
-  display: inline-flex;
-  flex-direction: row;
-  width: 450px;
-  height: 15%;
-  text-align: center;
-  align-items: center;
-  margin: auto;
-}
-
-.card-image {
-  width: 80%;
-}
-
-.number-of {
-  font-size: xx-large;
-  font-weight: bold;
-}
-
-.campaign-report {
-  width: 20%;
-  margin: 0px;
-}
-
-.campaign-details {
-  width: 80%;
-  margin: 0px;
-}
-
-.col-container {
-  display: table;
-  width: 100%;
-  height: 100%;
-}
-
-.col {
-  text-align: center;
-  display: table-cell;
-  padding: 0px;
-}
-
-.center-col {
-  border-right: 1px solid rgba(196, 190, 190, 0.205);
-  border-left: 5px solid rgb(101, 153, 255);
-}
-
-.data {
-  height: 33.3333%;
-  background-color: red;
-}
-
-.data-contaier {
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-}
-
-.data-col {
-  width: 20%;
-  display: inline-block;
-  padding: 0px;
-  vertical-align: middle;
-}
-
-.data-col p {
-  text-align: left;
-}
-
-.gradient-container {
-  margin: 0px 0;
-  width: 100%;
-  height: 50px;
-  position: relative;
-  display: flex;
-}
-
-.green-gradient {
-  background-image: linear-gradient(-90deg, white, #00b953);
-  width: 100%;
-  height: 90%;
-  margin: auto;
-  border-radius: 20px;
-  overflow: hidden;
-}
-
-.data-center-row {
-  border-top: 1px solid rgba(196, 190, 190, 0.205);
-  border-bottom: 1px solid rgba(196, 190, 190, 0.205);
-}
-
-.data-name {
-  color: rgb(171, 201, 253);
-  margin: 0px;
-}
-
-.title {
-  color: rgb(36, 37, 129);
-  font-size: 25px;
-  font-weight: bold;
-}
-
-.campaing-number {
-  color: rgb(36, 37, 129);
-  font-size: 50px;
-  font-weight: bold;
-  margin-top: 20px;
-}
-
-.mat-icon-open-dashboard {
-  color: transparent;
-}
-
 .dashboard-box-wrapper {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   overflow: auto;
   height: 89vh;
   /* Fallback for browsers that do not support Custom Properties */
@@ -217,10 +72,48 @@
   margin-left: -3px;
 }
 
-.productList{
-  width: 100px
+.table-card{
+  margin: 30px;
 }
 
+table { width: 100% }
+
+th:first-child, td:first-child { width: 100px; }
+th:nth-child(3) { width: 100px; }
+
+th, td { overflow: hidden; width: 200px; }
+
+.card-header{
+  display: flex;
+  justify-content: center;
+}
+
+.card-header button{
+  margin: auto 30px;
+  height: 50px;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 50%;
+}
+
+.buttons-cell{
+  display: flex;
+  justify-content: space-around;
+  padding: 50px;
+
+}
+
+.buttons-cell button{
+  height: 50px;
+  width: 50px;
+  margin: 0 10px;
+  border-radius: 50%;
+  background-color: rgb(101, 153, 255);
+  color: white;
+
+}
 
 .dashboard-wraper .header h4{
   margin:0;
@@ -231,6 +124,11 @@
   .icon-burguer {
     display: none;
   }
+
+  table{
+    table-layout: fixed;
+  }
+
 }
 
 @media (max-width: 700px) {

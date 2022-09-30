@@ -28,7 +28,7 @@ export class ProductsService {
   }
 
   //services that call the API to get a product by id
-  getProduct(id: string) {
+  getProduct(id: number) {
     return this.http.get<Product>(`${this.apiUrl}/products/${id}`)
         .pipe(
           catchError((error: HttpErrorResponse) => {
@@ -54,7 +54,7 @@ export class ProductsService {
   }
 
   //services that call the API to update a product
-  updateProduct(id: string, changes: DTOProduct) {
+  updateProduct(id: number, changes: DTOProduct) {
     return this.http.put(`${this.apiUrl}/products/${id}`, changes)
         .pipe(
           catchError((error: HttpErrorResponse) => {
@@ -67,7 +67,7 @@ export class ProductsService {
   }
 
   //services that call the API to delete a product
-  deleteProduct(id: string) {
+  deleteProduct(id: number) {
     return this.http.delete(`${this.apiUrl}/products/${id}`)
         .pipe(
           catchError((error: HttpErrorResponse) => {

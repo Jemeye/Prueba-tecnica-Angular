@@ -46,8 +46,11 @@ export class ProductsComponent implements OnInit, AfterViewInit{
 
   addProduct() {}
 
+  //delete product
   deleteProduct(id: number) {
-    const dialogRef = this.dialog.open(ConfirmDialogComponent, {});
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      data: '¿Estás seguro de eliminar este producto?'
+    });
     dialogRef.afterClosed().subscribe(result => {
       console.log(result);
       if(result == true){

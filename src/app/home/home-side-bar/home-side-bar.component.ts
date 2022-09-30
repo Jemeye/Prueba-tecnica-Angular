@@ -35,6 +35,7 @@ export class HomeSideBarComponent implements OnInit {
     if (this.drawer) {
       this.drawer.close();
     }
+    console.log(menu);
   }
 
   public collapse() {

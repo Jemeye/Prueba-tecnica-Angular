@@ -18,6 +18,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from "./common/material/material.module";
 import { HomeModule } from './home/home.module';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { HomeModule } from './home/home.module';
     NgSelectModule,
     InlineSVGModule.forRoot(),
     AutocompleteLibModule,
-    MaterialModule
+    MaterialModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },

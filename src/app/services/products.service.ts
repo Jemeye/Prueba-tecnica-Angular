@@ -14,6 +14,7 @@ export class ProductsService {
 
   constructor(private http: HttpClient) {}
 
+  //services that call the API to get all products
   getProducts() {
     return this.http.get<Product[]>(`${this.apiUrl}/products`)
         .pipe(
@@ -26,6 +27,7 @@ export class ProductsService {
         )
   }
 
+  //services that call the API to get a product by id
   getProduct(id: string) {
     return this.http.get<Product>(`${this.apiUrl}/products/${id}`)
         .pipe(
@@ -38,6 +40,7 @@ export class ProductsService {
         )
   }
 
+  //services that call the API to create a new product
   createProduct(product: DTOProduct) {
     return this.http.post<Product>(`${this.apiUrl}/products`, product)
         .pipe(
@@ -50,6 +53,7 @@ export class ProductsService {
         )
   }
 
+  //services that call the API to update a product
   updateProduct(id: string, changes: DTOProduct) {
     return this.http.put(`${this.apiUrl}/products/${id}`, changes)
         .pipe(
@@ -62,6 +66,7 @@ export class ProductsService {
         )
   }
 
+  //services that call the API to delete a product
   deleteProduct(id: string) {
     return this.http.delete(`${this.apiUrl}/products/${id}`)
         .pipe(

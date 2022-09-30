@@ -7,11 +7,16 @@ import { MaterialModule } from "../common/material/material.module";
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeSideBarComponent } from './home-side-bar/home-side-bar.component';
 import { HomeComponent } from './home.component';
+import { ProductsComponent } from './products/products.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+
 
 @NgModule({
   declarations: [
     HomeComponent,
-    HomeSideBarComponent
+    HomeSideBarComponent,
+    ProductsComponent,
   ],
   exports: [
   ],
@@ -21,7 +26,9 @@ import { HomeComponent } from './home.component';
     FormsModule,
     ReactiveFormsModule,
     FlexLayoutModule,
-    MaterialModule
+    MaterialModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
   providers: [
     CdkStepper

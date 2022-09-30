@@ -10,7 +10,7 @@
     <mat-card-header class="card-header">
       <mat-form-field appearance="standard">
         <mat-label>Buscar</mat-label>
-        <input matInput  placeholder="Ej. shoes" #input>
+        <input matInput (keyup)="searchProduct($event)" placeholder="Ej. shoes" #input>
       </mat-form-field>
       <button mat-raised-button (click)="addProduct()"> Agregar Producto </button>
     </mat-card-header>

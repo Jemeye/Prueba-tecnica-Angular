@@ -36,7 +36,10 @@ export class ProductsComponent implements OnInit, AfterViewInit{
     this.dataSource.paginator = this.paginator;
   }
 
-
+  searchProduct(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 
   addProduct() {}
 

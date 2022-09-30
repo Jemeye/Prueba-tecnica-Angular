@@ -4,6 +4,8 @@ import {MatTableDataSource} from '@angular/material/table';
 import { Product } from 'src/app/interfaces/product.type';
 import { ProductsService } from 'src/app/services/products.service';
 import { ToastService } from 'src/app/services/toast.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmDialogComponent } from '../modal/confirm-dialog/confirm-dialog.component';
 
 
 @Component({
@@ -20,7 +22,8 @@ export class ProductsComponent implements OnInit, AfterViewInit{
 
   constructor(
     private productsService: ProductsService,
-    private toastService: ToastService
+    private toastService: ToastService,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit() {
@@ -44,14 +47,17 @@ export class ProductsComponent implements OnInit, AfterViewInit{
   addProduct() {}
 
   deleteProduct(id: number) {
-    this.productsService.deleteProduct(id)
-    .subscribe(data => {
-      console.log(data);
-    })
-    this.toastService.success('Producto eliminado correctamente');
-    setTimeout(() => {
-      window.location.reload();
-    }, 2000);
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {});
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
+      if(result == true){
+        this.productsService.deleteProduct(id)
+        .subscribe(data => {
+          console.log(data);
+        })
+        this.toastService.success('Producto eliminado correctamente');
+        setTimeout(() => {window.location.reload();}, 2000);
+      }
+    });
   }
-
 }

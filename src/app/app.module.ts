@@ -20,6 +20,8 @@ import { MaterialModule } from "./common/material/material.module";
 import { HomeModule } from './home/home.module';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     AutocompleteLibModule,
     MaterialModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatDialogModule,
+    MatButtonModule
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },

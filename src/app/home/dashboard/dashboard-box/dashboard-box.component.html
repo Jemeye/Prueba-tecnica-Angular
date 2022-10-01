@@ -3,30 +3,30 @@
         <div class="flex-col-container">
             <div class="campaign-type">
                 <div class="icon-container">
-                  <img mat-card-image [src]="data.images[0]">
+                  <img [src]="data.images[0]" style="border-radius: 12px">
                 </div>
             </div>
             <div class="card-data-flex">
                 <div class="flex-data-container data-right-border">
-                    <div class="data-col tooltip w-80" >
+                    <div class="data-col tooltip w-80" style="padding-left: 10px">
                         <p class="font2">Título del producto</p>
                         <p class="font3 shorten">{{ data.title}}</p>
                         <span class="tooltiptext">{{ data.title }}</span>
                     </div>
                 </div>
-                <div class="flex-data-container">
+                <div class="flex-data-container" style="padding-left: 10px">
                     <div class="data-col w-80" >
                         <p class="font2 m-2" >Precio</p>
                         <p class="font3 shorten">{{ data.price | currency}}</p>
                     </div>
                 </div>
-                <div class="flex-data-container data-center-row data-right-border">
+                <div class="flex-data-container data-center-row data-right-border" style="padding-left: 10px">
                     <div class="data-col w-80" >
                         <p class="font2 no-margin">Descripción</p>
                         <p class="font3 shorten">{{ data.description }}</p>
                     </div>
                 </div>
-                <div class="flex-data-container data-center-row">
+                <div class="flex-data-container data-center-row" style="padding-left: 10px">
                     <div class="data-col w-80" >
                         <p class="font2 m-2">Categoría</p>
                         <p class="font3 shorten" >{{ data.category.name}}</p>

@@ -1,5 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 import { User } from "../interfaces/user.type";
 
 @Injectable({
@@ -9,13 +11,18 @@ export class AuthService {
 
   private _authenticatedUser: User = {
     active: true,
-    lastName: "Apellido",
-    secondLastName: "Apellido 2",
+    lastName: "Reyes",
+    secondLastName: "Elizondo",
     createDate: new Date(),
     id: 1,
-    secondName: "Nombre 2",
-    firstName: "Nombre"
+    secondName: "David",
+    firstName: "Juan"
   };
+
+  private credentials = {
+    username: "admin",
+    password: "admin**"
+  }
 
   constructor(private http: HttpClient) {
   }
@@ -44,4 +51,26 @@ export class AuthService {
     }
     return name;
   }
+
+  getauthenticatedUser(userName: string, password: string) {
+    if (userName === this.credentials.username && password === this.credentials.password) {
+      //token to e used in the future to validate the session
+      localStorage.setItem('token', '123456789');
+      return true;
+    } else {
+      throw new Error("Invalid credentials");
+    }
+  }
+
+  logout() {
+    //remove token from local storage
+    localStorage.removeItem('token');
+  }
+
+  isAuthenticated() {
+    //check if token is present in local storage
+    return !!localStorage.getItem('token');
+  }
+
 }
+

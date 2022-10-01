@@ -98,12 +98,15 @@ export class LoginComponent implements OnInit {
         const password = this.form.value["password"];
         localStorage.setItem("RememberMe", this.rememberUser ? "true" : "false");
         // validate credentials
+        const response = await this.authService.getauthenticatedUser(user, password);
+        if (response) {
         //
         this.toastService.success(
           "Bienvenido '" + this.authService.getNames({firstName: true, lastName: true}) + "'",
           "Exito"
         );
         this.router.navigateByUrl("/home/dashboard");
+        }
       }
     } catch (e) {
       console.log(e);

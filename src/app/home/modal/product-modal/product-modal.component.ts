@@ -77,6 +77,7 @@ export class ProductModalComponent implements OnInit {
          this.dialogRef.close(true);
       });
     }
+    //call service to update product
     else{
       this.productServices.updateProduct(this.data.id, this.product)
       .subscribe(data => {

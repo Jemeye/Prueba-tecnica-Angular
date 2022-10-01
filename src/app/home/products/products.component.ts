@@ -45,6 +45,7 @@ export class ProductsComponent implements OnInit, AfterViewInit{
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
+  //add product
   addProduct() {
     const dialogRef = this.dialog.open(ProductModalComponent, {
       width: '700px',
@@ -58,10 +59,14 @@ export class ProductsComponent implements OnInit, AfterViewInit{
       if(result == true){
         this.toastService.success('Producto agregado correctamente');
         setTimeout(() => {window.location.reload();}, 2000);
+      }else
+      {
+        this.toastService.info('Operación cancelada');
       }
     });
   }
 
+  //edit product
   updateProduct(id: number) {
     const dialogRef = this.dialog.open(ProductModalComponent, {
       width: '700px',
@@ -75,6 +80,9 @@ export class ProductsComponent implements OnInit, AfterViewInit{
       if(result == true){
         this.toastService.success('Producto actualizado correctamente');
         setTimeout(() => {window.location.reload();}, 2000);
+      }else
+      {
+        this.toastService.info('Operación cancelada');
       }
     });
 
@@ -94,6 +102,9 @@ export class ProductsComponent implements OnInit, AfterViewInit{
         })
         this.toastService.success('Producto eliminado correctamente');
         setTimeout(() => {window.location.reload();}, 2000);
+      }else
+      {
+        this.toastService.info('Operación cancelada');
       }
     });
   }

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from "@angular/core";
+import { Product } from "src/app/interfaces/product.type";
 import { DashboardItem } from "../../../interfaces/dashboard.item.type";
 import { DashboardService } from "../../../services/dashboard.service";
 import { DashboardComponent } from "../dashboard.component";
@@ -10,7 +11,7 @@ import { DashboardComponent } from "../dashboard.component";
 })
 export class DashboardBoxComponent implements OnInit {
   public expanded = false;
-  @Input() public data: any;
+  @Input() public data: Product;
   @Input() public mainRef: DashboardComponent;
   // must be changed for real data from dashboard component, does not make sense call a service from this component
   public fixedData: DashboardItem;
@@ -21,6 +22,8 @@ export class DashboardBoxComponent implements OnInit {
   }
 
   public ngOnInit(): void {
+    console.log(this.data+" box dashboard");
+    this.data.images.values
   }
 
   /**

@@ -2,6 +2,8 @@ import { Component, Injectable, OnInit } from "@angular/core";
 import { DashboardItem } from "../../interfaces/dashboard.item.type";
 import { DashboardService } from "../../services/dashboard.service";
 import { ToastService } from "../../services/toast.service";
+import { ProductsService } from "src/app/services/products.service";
+import { Product } from "src/app/interfaces/product.type";
 
 @Component({
   selector: "app-dashboard",
@@ -28,14 +30,24 @@ export class DashboardComponent implements OnInit {
     wanderingCubes: "wandering-cubes",
   };
 
+  public products: Product [] = [];
+
   constructor(
     private dashboardService: DashboardService,
-    private toast: ToastService
-  ) {}
+    private toast: ToastService,
+    private productService: ProductsService
+  ) {
+  }
+
 
 
   public ngOnInit() {
-    this.getData().then();
+    // this.getData().then();
+    this.productService.getProducts()
+    .subscribe((data) => {
+      this.products = data;
+      console.log(data);
+    });
   }
 
   /**

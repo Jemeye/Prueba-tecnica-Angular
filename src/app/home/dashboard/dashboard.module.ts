@@ -28,6 +28,7 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 
 
+
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -58,7 +59,8 @@ import { DashboardComponent } from './dashboard.component';
         MatTableModule,
         MatSortModule,
         NgxLoadingModule,
-        MatChipsModule
+        MatChipsModule,
+        MatIconModule
     ]
 })
 export class DashboardModule { }

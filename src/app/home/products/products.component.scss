@@ -74,15 +74,39 @@
 
 .table-card{
   margin: 30px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: rgb(57, 127, 204) solid 1px;
 }
 
-table { width: 100% }
+mat-paginator {
+  margin-top: 10px;
+  color: white;
+  background-color: transparent;
+}
+
+table {
+  width: 100%;
+  background-color: transparent;
+  color: white;
+}
+
+.table-card .card-header button{
+  background-color: rgb(57, 127, 204);
+  color: white;
+}
+
+.table-card .card-header .mat-form-field{
+  color: #e0e0e0;
+}
 
 th:first-child, td:first-child { width: 100px; }
 th:nth-child(3) { width: 100px; }
 
-th, td { overflow: hidden; width: 200px; }
+th, td { overflow: hidden; width: 200px; color: white; }
 
+th, td.mat-cell {
+  border-bottom:#e0e0e0 1px solid ;
+}
 .card-header{
   display: flex;
   justify-content: center;
@@ -93,31 +117,52 @@ th, td { overflow: hidden; width: 200px; }
   height: 50px;
 }
 
-.mat-form-field {
+.search-input {
   font-size: 14px;
   width: 50%;
+  background-color:transparent;
+  padding: 0;
 }
 
-.buttons-cell{
-  display: flex;
-  justify-content: space-around;
-  padding: 50px;
+.table-card ::ng-deep .mat-focused .mat-form-field-label{
+  color: white !important;
+}
 
+.table-card ::ng-deep .mat-form-field{
+
+  .mat-form-field-label {
+    color:white !important;
+  }
+  .mat-form-field-underline {
+    color:white !important;
+  }
+  .mat-form-field-ripple {
+    background-color:white !important;
+  }
+  .mat-form-field-placeholder {
+    color: white !important
+  }
+  // +
+}
+
+
+.buttons-cell{
+  text-align: center;
 }
 
 .buttons-cell button{
   height: 50px;
   width: 50px;
-  margin: 0 10px;
+  margin: 10px ;
   border-radius: 50%;
-  background-color: rgb(101, 153, 255);
+  background-color: rgb(57, 127, 204);
   color: white;
 
 }
 
 .dashboard-wraper .header h4{
   margin:0;
-  color:rgb(101, 153, 255)
+  color:rgb(57, 127, 204)
 }
 
 @media (min-width: 1025px) {

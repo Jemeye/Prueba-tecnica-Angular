@@ -58,7 +58,7 @@ export class ProductsComponent implements OnInit, AfterViewInit{
       console.log(result);
       if(result == true){
         this.toastService.success('Producto agregado correctamente');
-        setTimeout(() => {window.location.reload();}, 2000);
+        setTimeout(() => {window.location.reload();}, 1000);
       }else
       {
         this.toastService.info('Operación cancelada');
@@ -79,7 +79,7 @@ export class ProductsComponent implements OnInit, AfterViewInit{
       console.log(result);
       if(result == true){
         this.toastService.success('Producto actualizado correctamente');
-        setTimeout(() => {window.location.reload();}, 2000);
+        setTimeout(() => {window.location.reload();}, 1000);
       }else
       {
         this.toastService.info('Operación cancelada');
@@ -101,7 +101,7 @@ export class ProductsComponent implements OnInit, AfterViewInit{
           console.log(data);
         })
         this.toastService.success('Producto eliminado correctamente');
-        setTimeout(() => {window.location.reload();}, 2000);
+        setTimeout(() => {window.location.reload();}, 1000);
       }else
       {
         this.toastService.info('Operación cancelada');

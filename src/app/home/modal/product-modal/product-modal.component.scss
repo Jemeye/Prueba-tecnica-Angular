@@ -17,3 +17,18 @@
   width: 100px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
+
+.form-content h6{
+  color:rgb(101, 153, 255) ;
+}
+
+.buttons-container button{
+  background-color:rgb(101, 153, 255) ;
+  color: white;
+}
+
+.buttons-container button:nth-child(2){
+  background-color: transparent;
+  border: 1px solid gray;
+  color: gray;
+}

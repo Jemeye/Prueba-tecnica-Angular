@@ -1,0 +1,10 @@
+button{
+  background-color:rgb(101, 153, 255) ;
+  color: white;
+}
+
+button:nth-child(2){
+  background-color: transparent;
+  border: 1px solid gray;
+  color: gray;
+}

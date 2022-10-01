@@ -2,6 +2,6 @@ export interface DTOProduct {
   title: string;
   price: number;
   description: string;
-  category: number;
+  categoryId: number;
   images: string[];
 }

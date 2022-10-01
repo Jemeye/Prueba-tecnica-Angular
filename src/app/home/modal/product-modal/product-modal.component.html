@@ -1,0 +1,37 @@
+<div [formGroup]="form" class="form-container">
+  <div mat-dialog-content class="form-content">
+    <h6>{{data.title}}</h6>
+    <br>
+    <mat-form-field appearance="fill">
+      <mat-label>Título</mat-label>
+      <input matInput formControlName="title" placeholder="Ej. shoes" #input>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Precio</mat-label>
+      <input matInput formControlName="price" placeholder="Ej. 15000" #input type="number">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Descripción</mat-label>
+      <textarea matInput formControlName="description" placeholder="Ej. perfect shoes for sports"></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Categoría</mat-label>
+      <mat-select formControlName="category">
+        <mat-option value="1">Clothes</mat-option>
+        <mat-option value="2">Electronics</mat-option>
+        <mat-option value="3">Furniture"</mat-option>
+        <mat-option value="4">Toys</mat-option>
+        <mat-option value="5">Others</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions class="buttons-container">
+    <button mat-button type="submit" [disabled]="form.invalid" (click)="onSubmit()">Guardar</button>
+    <button mat-button (click)="clickNo()" >Cancelar</button>
+  </div>
+</div>
+
+

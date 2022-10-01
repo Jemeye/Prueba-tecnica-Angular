@@ -11,6 +11,7 @@ import { ProductsComponent } from './products/products.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { ConfirmDialogComponent } from './modal/confirm-dialog/confirm-dialog.component';
+import { ProductModalComponent } from './modal/product-modal/product-modal.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { ConfirmDialogComponent } from './modal/confirm-dialog/confirm-dialog.co
     HomeSideBarComponent,
     ProductsComponent,
     ConfirmDialogComponent,
+    ProductModalComponent,
   ],
   exports: [
   ],
@@ -33,7 +35,8 @@ import { ConfirmDialogComponent } from './modal/confirm-dialog/confirm-dialog.co
     MatPaginatorModule
   ],
   entryComponents: [
-    ConfirmDialogComponent
+    ConfirmDialogComponent,
+    ProductModalComponent
   ],
   providers: [
     CdkStepper

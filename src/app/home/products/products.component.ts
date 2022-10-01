@@ -6,6 +6,7 @@ import { ProductsService } from 'src/app/services/products.service';
 import { ToastService } from 'src/app/services/toast.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmDialogComponent } from '../modal/confirm-dialog/confirm-dialog.component';
+import { ProductModalComponent } from '../modal/product-modal/product-modal.component';
 
 
 @Component({
@@ -44,7 +45,40 @@ export class ProductsComponent implements OnInit, AfterViewInit{
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  addProduct() {}
+  addProduct() {
+    const dialogRef = this.dialog.open(ProductModalComponent, {
+      width: '700px',
+      data: {
+        title: 'Agregar un nuevo producto',
+        id: 0
+      }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
+      if(result == true){
+        this.toastService.success('Producto agregado correctamente');
+        setTimeout(() => {window.location.reload();}, 2000);
+      }
+    });
+  }
+
+  updateProduct(id: number) {
+    const dialogRef = this.dialog.open(ProductModalComponent, {
+      width: '700px',
+      data: {
+        title: 'Agregar un nuevo producto',
+        id: id
+      }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
+      if(result == true){
+        this.toastService.success('Producto actualizado correctamente');
+        setTimeout(() => {window.location.reload();}, 2000);
+      }
+    });
+
+  }
 
   //delete product
   deleteProduct(id: number) {

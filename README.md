@@ -6,7 +6,7 @@ Este repositorio es creado con el propósito de alojar el software de prueba par
 
 ## API
 
-La API usada en el proyecto es Yard Store. Esta API permite peticiones de tipo GET, POST, PUT y DELETE a productos, los cuales tienen la siguiente estructura. 
+La API usada en el proyecto es **Yard Store**. Esta API permite peticiones de tipo *GET, POST, PUT y DELETE* a productos, los cuales tienen la siguiente estructura. 
 
 ```
 {
@@ -43,12 +43,11 @@ git clone https://github.com/Jemeye/Prueba-tecnica-Angular.git
 
 Para poder ingresar el sistema se deben usar las siguientes credenciales: 
 
-# Username: 
+* Username: 
 ```
 admin
 ```
-
-# Password: 
+* Password: 
 ```
 admin**
 ```
@@ -59,7 +58,7 @@ El proyeto cuenta con dos vistas importante, la vista dashboard y productos. En 
 
 ## Protección de rutas
 
-Las rutas del proyecto están protegidas mediante GUARDS, que es una forma de proteger las rutas de acuerdo a una condición en un proyecto Angular. Se usó un Guard de tipo CanActivate, que analiza la condición previo a la carga de los componentes de la ruta, la condición usada consiste en verificar si existe un token en el *localstorage*, el cual es generado en el momento en que el usuario inicia sesión. Si el token existe se mustran las rutas, de lo contrario no será posible ingresar a ellas. 
+Las rutas del proyecto están protegidas mediante GUARDS, que es una forma de proteger las rutas de acuerdo a una condición en un proyecto Angular. Se usó un Guard de tipo **CanActivate**, que analiza la condición previo a la carga de los componentes de la ruta, la condición usada consiste en verificar si existe un token en el **localstorage**, el cual es generado en el momento en que el usuario inicia sesión. Si el token existe se mustran las rutas, de lo contrario no será posible ingresar a ellas. 
 
 ## Angular
 

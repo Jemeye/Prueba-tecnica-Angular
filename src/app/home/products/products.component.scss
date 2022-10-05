@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+
+::ng-deep.campaign-type-icon g * {
+  fill: #ffffff00;
+  stroke: inherit;
+  stroke-dasharray: unset;
+}
+
+.dashboard-wraper {
+  height: 11vh; /* Fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 11);
+  width: 100%;
+  padding: 0;
+  background-image: linear-gradient(-90deg, #000024, #00234e);
+  box-shadow: 0 1px 13px 0 rgba(0, 0, 0, 0.55);
+}
+
+.TextoIconoHeader {
+  font-family: "Montserrat", sans-serif;
+  margin-left: 4vmin;
+  font-weight: bold;
+  font-size: 4vmin;
+  @media screen and (max-width: 800px) {
+    margin-left: 1vmin;
+  }
+  @media screen and (max-width: 1366px) {
+    margin-left: 1.5vmin;
+  }
+}
+
+.campaign-type-icon {
+  pointer-events: none;
+  height: 5vmin;
+  width: 5vmin;
+  color: #6699ff00;
+  stroke: #6699ff;
+}
+
+.first-icon {
+  color: #6699ffff;
+  stroke: #6699ff00;
+}
+
+.header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  width: calc(100% - 13vw);
+  height: 100%;
+  z-index: 10;
+  font-size: 18px;
+  color: white;
+  vertical-align: middle;
+}
+
+.header img {
+  height: 26px;
+  margin: 0 10px;
+}
+
+.dashboard-box-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  overflow: auto;
+  height: 89vh;
+  /* Fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 89);
+  background-image: url('/assets/Dashboard/fondoDashboard@PYP.png');
+  z-index: -1;
+  margin-left: -3px;
+}
+
+.table-card{
+  margin: 30px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: rgb(57, 127, 204) solid 1px;
+}
+
+mat-paginator {
+  margin-top: 10px;
+  color: white;
+  background-color: transparent;
+}
+
+table {
+  width: 100%;
+  background-color: transparent;
+  color: white;
+}
+
+.table-card .card-header button{
+  background-color: rgb(57, 127, 204);
+  color: white;
+}
+
+.table-card .card-header .mat-form-field{
+  color: #e0e0e0;
+}
+
+th:first-child, td:first-child { width: 100px; }
+th:nth-child(3) { width: 100px; }
+
+th, td { overflow: hidden; width: 200px; color: white; }
+
+th, td.mat-cell {
+  border-bottom:#e0e0e0 1px solid ;
+}
+.card-header{
+  display: flex;
+  justify-content: center;
+}
+
+.card-header button{
+  margin: auto 30px;
+  height: 50px;
+}
+
+.search-input {
+  font-size: 14px;
+  width: 50%;
+  background-color:transparent;
+  padding: 0;
+}
+
+.table-card ::ng-deep .mat-focused .mat-form-field-label{
+  color: white !important;
+}
+
+.table-card ::ng-deep .mat-form-field{
+
+  .mat-form-field-label {
+    color:white !important;
+  }
+  .mat-form-field-underline {
+    color:white !important;
+  }
+  .mat-form-field-ripple {
+    background-color:white !important;
+  }
+  .mat-form-field-placeholder {
+    color: white !important
+  }
+  // +
+}
+
+
+.buttons-cell{
+  text-align: center;
+}
+
+.buttons-cell button{
+  height: 50px;
+  width: 50px;
+  margin: 10px ;
+  border-radius: 50%;
+  background-color: rgb(57, 127, 204);
+  color: white;
+
+}
+
+.dashboard-wraper .header h4{
+  margin:0;
+  color:rgb(57, 127, 204)
+}
+
+@media (min-width: 1025px) {
+  .icon-burguer {
+    display: none;
+  }
+
+  table{
+    table-layout: fixed;
+  }
+
+}
+
+@media (max-width: 700px) {
+  .header {
+    display: none;
+  }
+}

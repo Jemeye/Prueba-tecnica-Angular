@@ -1,0 +1,48 @@
+<div class="dashboard-box-container">
+    <mat-card class="card-style first-card"  (click)="changePanel()">
+        <div class="flex-col-container">
+            <div class="campaign-type">
+                <div class="icon-container">
+                  <img [src]="data.images[0]" style="border-radius: 12px">
+                </div>
+            </div>
+            <div class="card-data-flex">
+                <div class="flex-data-container data-right-border">
+                    <div class="data-col tooltip w-80" style="padding-left: 10px">
+                        <p class="font2">Título del producto</p>
+                        <p class="font3 shorten">{{ data.title}}</p>
+                        <span class="tooltiptext">{{ data.title }}</span>
+                    </div>
+                </div>
+                <div class="flex-data-container" style="padding-left: 10px">
+                    <div class="data-col w-80" >
+                        <p class="font2 m-2" >Precio</p>
+                        <p class="font3 shorten">{{ data.price | currency}}</p>
+                    </div>
+                </div>
+                <div class="flex-data-container data-center-row data-right-border" style="padding-left: 10px">
+                    <div class="data-col w-80" >
+                        <p class="font2 no-margin">Descripción</p>
+                        <p class="font3 shorten">{{ data.description }}</p>
+                    </div>
+                </div>
+                <div class="flex-data-container data-center-row" style="padding-left: 10px">
+                    <div class="data-col w-80" >
+                        <p class="font2 m-2">Categoría</p>
+                        <p class="font3 shorten" >{{ data.category.name}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-card>
+
+    <!-- <div class="single-data-container" *ngIf="expanded">
+        <div *ngFor="let expandableData of data.expandableData; let i = index" class="data-card">
+            <mat-card class="flex-card card-style">
+                <mat-icon class="data-icon-svg pointer w-30" [svgIcon]="expandableData.icon" [ngStyle]="{'fill': 'transparent','stroke': data.color}"></mat-icon>
+                <p class="font4">{{expandableData.label}}</p>
+                <p class="font5">{{expandableData.value}}</p>
+            </mat-card>
+        </div>
+    </div> -->
+</div>
